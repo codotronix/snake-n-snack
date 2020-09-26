@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/snake-n-snack/static/css/main.5c7b62bb.chunk.css",
+    "main.js": "/snake-n-snack/static/js/main.36fa6629.chunk.js",
+    "main.js.map": "/snake-n-snack/static/js/main.36fa6629.chunk.js.map",
+    "runtime-main.js": "/snake-n-snack/static/js/runtime-main.83c0fdb9.js",
+    "runtime-main.js.map": "/snake-n-snack/static/js/runtime-main.83c0fdb9.js.map",
+    "static/js/2.063134d5.chunk.js": "/snake-n-snack/static/js/2.063134d5.chunk.js",
+    "static/js/2.063134d5.chunk.js.map": "/snake-n-snack/static/js/2.063134d5.chunk.js.map",
+    "index.html": "/snake-n-snack/index.html",
+    "precache-manifest.7ad78da668870a7909b2592de89d7989.js": "/snake-n-snack/precache-manifest.7ad78da668870a7909b2592de89d7989.js",
+    "service-worker.js": "/snake-n-snack/service-worker.js",
+    "static/css/main.5c7b62bb.chunk.css.map": "/snake-n-snack/static/css/main.5c7b62bb.chunk.css.map",
+    "static/js/2.063134d5.chunk.js.LICENSE.txt": "/snake-n-snack/static/js/2.063134d5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83c0fdb9.js",
+    "static/js/2.063134d5.chunk.js",
+    "static/css/main.5c7b62bb.chunk.css",
+    "static/js/main.36fa6629.chunk.js"
+  ]
+}
