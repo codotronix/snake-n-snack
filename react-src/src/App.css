@@ -5,6 +5,19 @@
 .cell {
   position: absolute;
   display: inline-block;
-  background: burlywood;
-  border: .5px solid #eee;
+  background: #000;
+  /* border: .5px solid #eee; */
+}
+.cell.snake-body:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: red;
+  border-radius: 50%;
+}
+.cell.snake-body.snake-head:before {
+  background: blue;
 }
