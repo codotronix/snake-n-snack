@@ -1,0 +1,10 @@
+.board {
+  position: relative;
+  margin: 10px auto;
+}
+.cell {
+  position: absolute;
+  display: inline-block;
+  background: burlywood;
+  border: .5px solid #eee;
+}
