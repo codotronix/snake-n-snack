@@ -1,12 +1,34 @@
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+}
+.header {
+  text-align: center;
+  border-bottom: 2px solid deepskyblue;
+  padding-bottom: 5px;
+}
+.subheader {
+  padding: 0 15px 22px;
+  /* margin-top: 2px; */
+  color: #ff0;
+  font-size: 20px;
+  border-bottom: 2px solid deepskyblue;
+  margin-bottom: 0;
+}
 .board {
   position: relative;
-  margin: 10px auto;
+  margin: 2px auto;
 }
 .cell {
   position: absolute;
   display: inline-block;
   background: #000;
   /* border: .5px solid #eee; */
+}
+.cell.food {
+  background: #000 url('/snake-n-snack/assets/img/snack40x.png') no-repeat 0 0;
+  background-size: contain;
 }
 .cell.snake-body:before {
   content: '';
@@ -20,4 +42,30 @@
 }
 .cell.snake-body.snake-head:before {
   background: blue;
+}
+.gamepad .ico {
+  color: #00dcff;
+  font-size: 30px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.gamepad .group {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 10px;
+}
+.gamepad .group.left {
+  left: 0;
+}
+.gamepad .group.right {
+  right: 0;
+}
+.status {
+  position: absolute;
+  top: -33px;
+  right: 9px;
+  color: deepskyblue;
+  font-size: 20px;
 }
