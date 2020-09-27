@@ -1,3 +1,12 @@
+/*******************************
+* UTILITIES
+*******************************/
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .App {
   max-width: 600px;
   margin: 0 auto;
@@ -69,4 +78,8 @@
   right: 9px;
   color: deepskyblue;
   font-size: 20px;
+}
+.mid-screen-button .ico {
+  font-size: 30px;
+  color: rgb(255 255 255 / 18%);
 }

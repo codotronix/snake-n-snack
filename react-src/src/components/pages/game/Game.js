@@ -2,7 +2,7 @@ import React, { useEffect, useReducer, useCallback } from 'react'
 import clsx from 'clsx'
 import _ from 'lodash'
 import GamePad from './GamePad'
-import ButtonPanel from './ButtonPanel'
+// import ButtonPanel from './ButtonPanel'
 
 /**
  * Scale height to adjust visible window
@@ -203,7 +203,7 @@ const Game = props => {
 
     return (
         <div className="gamepage">
-            <div className="board" 
+            <div className="board flex-centered" 
                 style={{ width: boardWidth, height: boardHeight }}
                 onClick={togglePause}
             >
@@ -234,11 +234,23 @@ const Game = props => {
                     moveRight={moveRight}
                 />
                 <span className="status">Snake Size: {gameState.snake.length}</span>
+            
+                <span className="mid-screen-button">
+                { 
+                    gameState.isAlive && !gameState.isPaused &&
+                    <i class="fas fa-pause ico"></i>
+                }
+                { 
+                    gameState.isAlive && gameState.isPaused &&
+                    <i class="fas fa-play ico"></i>
+                }
+            </span>
             </div>
-            <ButtonPanel 
+            {/* <ButtonPanel 
                 togglePause={togglePause}
                 isPaused={gameState.isPaused}
-            />
+            /> */}
+            
         </div>
     )
 }
