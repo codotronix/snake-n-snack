@@ -1,9 +1,10 @@
 import React, { memo } from 'react'
 
 const style = {
-    borderTop: '2px solid deepskyblue',
+    // borderTop: '2px solid deepskyblue',
     display: 'flex',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    paddingTop: 1
 }
 
 const ButtonPanel = props => {

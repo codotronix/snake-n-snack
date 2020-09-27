@@ -4,6 +4,16 @@ import _ from 'lodash'
 import GamePad from './GamePad'
 import ButtonPanel from './ButtonPanel'
 
+/**
+ * Scale height to adjust visible window
+ */
+setTimeout(() => {
+    const winHeight = window.innerHeight
+    const bodyHeight = document.body.offsetHeight
+    document.body.style.transform = `scaleY(${winHeight/bodyHeight})`
+    document.body.style.overflow = 'hidden'
+}, 1000)
+
 const rows = 15
 const columns = 18
 const boardWidth = window.innerWidth > 600 ? 600 : window.innerWidth
