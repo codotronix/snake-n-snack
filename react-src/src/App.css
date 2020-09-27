@@ -79,7 +79,11 @@
   color: deepskyblue;
   font-size: 20px;
 }
+.mid-screen-button {
+  z-index: 9;
+}
 .mid-screen-button .ico {
   font-size: 30px;
   color: rgb(255 255 255 / 18%);
+  padding: 30px;
 }

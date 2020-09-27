@@ -22,10 +22,13 @@ const boardHeight = cellWidth * columns
 const snakeHead = '7-7' // let a mid cell be the head
 const frequency = 700  // 1 move per frequency ms
 
+let timeoutCallRef = null   // to not have multiple setTimeout Calls
+
 const actionTypes = {
     CHANGE_DIRECTION: "CHANGE_DIRECTION",
     MOVE: "MOVE",
-    TOGGLE_PAUSE: "TOGGLE_PAUSE"
+    TOGGLE_PAUSE: "TOGGLE_PAUSE",
+    RESTART: "RESTART"
 }
 
 /**
@@ -77,6 +80,9 @@ const reducer = (state, action) => {
     const { type, payload } = action
     
     switch(type) {
+        case actionTypes.RESTART: {
+            return initState
+        }
         case actionTypes.CHANGE_DIRECTION: {
             if(!state.isAlive || state.isPaused) return state
             return {
@@ -168,9 +174,10 @@ const Game = props => {
     const [gameState, dispatch] = useReducer(reducer, initState)
 
     const gameLoop = useCallback(() => {
+        clearTimeout(timeoutCallRef)
         if(!gameState.isAlive) return
         dispatch({ type: actionTypes.MOVE })
-        setTimeout(gameLoop, frequency)
+        timeoutCallRef = setTimeout(gameLoop, frequency)
     }, [gameState.isAlive])
 
     useEffect(() => {
@@ -200,12 +207,12 @@ const Game = props => {
     const moveLeft = () => move(DIRECTION.LEFT)
     const moveRight = () => move(DIRECTION.RIGHT)
     const togglePause = () => dispatch({ type: actionTypes.TOGGLE_PAUSE })
+    const restart = () => dispatch({ type: actionTypes.RESTART })
 
     return (
         <div className="gamepage">
             <div className="board flex-centered" 
                 style={{ width: boardWidth, height: boardHeight }}
-                onClick={togglePause}
             >
                 {
                     Object.values(cells).map(c => 
@@ -238,11 +245,15 @@ const Game = props => {
                 <span className="mid-screen-button">
                 { 
                     gameState.isAlive && !gameState.isPaused &&
-                    <i class="fas fa-pause ico"></i>
+                    <i class="fas fa-pause ico" onClick={togglePause}></i>
                 }
                 { 
                     gameState.isAlive && gameState.isPaused &&
-                    <i class="fas fa-play ico"></i>
+                    <i class="fas fa-play ico" onClick={togglePause}></i>
+                }
+                { 
+                    !gameState.isAlive &&
+                    <i class="fas fa-redo-alt ico" onClick={restart}></i>
                 }
             </span>
             </div>
